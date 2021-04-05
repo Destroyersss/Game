@@ -264,18 +264,6 @@ function startTimer() {
       hours++;
       minutes = 0;
     }
-    {
-      ///END TIMER////
-      if (seconds == 40) {
-        timeModal.innerText = timer.innerText;
-        ratingModal.innerHTML = starsForRate.innerHTML;
-        movesModal.innerHTML = movesCounter.innerHTML.slice(0, 3);
-        clearInterval(timeCounter);
-        modalText.innerText = "Time is end. Try Again!";
-        modal.style.display = "block";
-      }
-      /////////////////
-    }
   }, 1000);
 }
 
