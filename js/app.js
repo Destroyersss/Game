@@ -160,16 +160,6 @@ function respondToTheClick(e) {
     }
     wohoo();
   }
-
-  ///Game is OVER/////
-  if (matchedCards.length + 4 <= moves + 2) {
-    timeModal.innerText = timer.innerText;
-    ratingModal.innerHTML = starsForRate.innerHTML;
-    movesModal.innerHTML = movesCounter.innerHTML.slice(0, 3);
-    clearInterval(timeCounter);
-    modalText.innerText = "Game is Over. Try Again!";
-    modal.style.display = "block";
-  }
 }
 
 // if the cards are matched
@@ -263,6 +253,18 @@ function startTimer() {
     } else if (minutes == 60) {
       hours++;
       minutes = 0;
+    }
+    {
+      ///END TIMER////
+      if (seconds == 40) {
+        timeModal.innerText = timer.innerText;
+        ratingModal.innerHTML = starsForRate.innerHTML;
+        movesModal.innerHTML = movesCounter.innerHTML.slice(0, 3);
+        clearInterval(timeCounter);
+        modalText.innerText = "Time is end. Try Again!";
+        modal.style.display = "block";
+      }
+      /////////////////
     }
   }, 1000);
 }
